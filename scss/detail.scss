@@ -5,9 +5,13 @@
 }
 
 .title {
+  border-bottom: solid $earls-green;
+  border-bottom-width: 4px;
   font-size: 32px;
   font-weight: bold;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  width: 100%;
 }
 
 .subtitle {
@@ -29,16 +33,12 @@
   font-weight: bold;
 }
 
-.separator {
-  background-color: $earls-green;
-  height: 4px;
-  margin-bottom: 18px;
-  width: 540px;
-}
-
 .main-container {
+  box-shadow: 4px 4px 10px 0 $black-05;
   display: flex;
+  height: 416px;
   margin: 24px;
+  width: 900px;
 }
 
 .book-cover {
@@ -49,4 +49,10 @@
 
 .book-detail {
   margin-left: 26px;
+  width: 540px;
+}
+
+.book-container {
+  display: flex;
+  margin: 24px;
 }
