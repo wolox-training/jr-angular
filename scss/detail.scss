@@ -6,9 +6,9 @@
 
 .title {
   font-size: 32px;
+  font-weight: bold;
   margin: 12px 0;
   padding-top: 12px;
-  font-weight: bold;
 }
 
 .subtitle {
@@ -17,8 +17,8 @@
 }
 
 .placeholder {
-  font-size: 20px;
   color: $gray;
+  font-size: 20px;
 }
 
 .description {
@@ -31,8 +31,8 @@
 }
 
 .separator {
-  height: 4px;
   background-color: $earls-green;
-  width: 540px;
+  height: 4px;
   margin-bottom: 18px;
+  width: 540px;
 }
