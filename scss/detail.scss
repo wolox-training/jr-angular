@@ -33,6 +33,11 @@
   font-weight: bold;
 }
 
+.book-detail {
+  margin-left: 26px;
+  width: 540px;
+}
+
 .main-container {
   box-shadow: 4px 4px 10px 0 $black-05;
   display: flex;
@@ -45,11 +50,6 @@
   height: 368px;
   margin-right: 26px;
   width: 261px;
-}
-
-.book-detail {
-  margin-left: 26px;
-  width: 540px;
 }
 
 .book-container {
