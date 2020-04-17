@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+.title {
+  border-bottom: 4px solid $earls-green;
+  font: bold 32px Roboto;
+  padding: 12px 0;
+  width: 540px;
+}
+
+.subtitle {
+  margin-right: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.placeholder {
+  color: $gray;
+  font-size: 20px;
+}
+
+.description {
+  margin: 36px 0;
+}
+
+.genre {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.book-detail {
+  margin-left: 26px;
+  width: 540px;
+}
