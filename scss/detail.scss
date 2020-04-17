@@ -5,12 +5,14 @@
 }
 
 .title {
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 12px;
+  border-bottom: 4px solid $earls-green;
+  font: bold 32px Roboto;
+  padding: 12px 0;
+  width: 540px;
 }
 
 .subtitle {
+  margin-right: 8px;
   font-size: 20px;
   font-weight: bold;
 }
@@ -21,7 +23,7 @@
 }
 
 .description {
-  padding: 18px 0;
+  margin: 36px 0;
 }
 
 .genre {
@@ -29,18 +31,12 @@
   font-weight: bold;
 }
 
-.separator {
-  background-color: $earls-green;
-  height: 4px;
-  margin-bottom: 18px;
-}
-
 .book-detail {
   margin-left: 26px;
   width: 540px;
 }
 
-.main-container {
+.book-container {
   display: flex;
   margin: 24px;
 }
