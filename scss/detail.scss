@@ -48,11 +48,29 @@
 
 .book-cover {
   height: 368px;
-  margin-right: 26px;
   width: 261px;
 }
 
 .book-container {
   display: flex;
   margin: 24px;
+}
+
+.cover-container {
+  position: relative;
+  margin-right: 26px;
+}
+
+.badge {
+
+  &::after {
+    background: url(images/badge.png) center / contain no-repeat;
+    bottom: 271.71px;
+    content: '';
+    height: 118.57px;
+    left: 199.73px;
+    position: absolute;
+    transform: rotate(15deg);
+    width: 94.53px;
+  }
 }
