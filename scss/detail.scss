@@ -33,11 +33,12 @@
   width: 540px;
 }
 
-.main-container {
+.book-container {
+  background-color: $white;
   box-shadow: 4px 4px 10px 0 $black-05;
   display: flex;
   height: 416px;
-  margin: 24px;
+  padding: 24px;
   width: 900px;
 }
 
@@ -46,9 +47,13 @@
   width: 261px;
 }
 
-.book-container {
+.main-container {
+  align-items: center;
   display: flex;
-  margin: 24px;
+  flex-direction: column;
+  height: 768px;
+  justify-content: center;
+  width: 100%;
 }
 
 .cover-container {
@@ -69,3 +74,27 @@
     width: 94.53px;
   }
 }
+
+.back-link {
+  align-items: center;
+  display: flex;
+  height: 22px;
+  position: absolute;
+  top: 46px;
+  left: 270px;
+  width: 91px;
+
+  &::before {
+    background: url(images/back-arrow.png) center / contain no-repeat;
+    content: '';
+    height: 20px;
+    position: absolute;
+    width: 20px;
+  }
+}
+
+.back-text {
+  font-size: 20px;
+  padding-left: 30px;
+}
+
