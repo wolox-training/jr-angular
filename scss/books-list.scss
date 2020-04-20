@@ -33,7 +33,6 @@ body {
   flex-direction: column;
   height: 300px;
   justify-content: center;
-  margin: 0 18px;
   padding: 28px 28px 23px;
   width: 198px;
 }
@@ -45,8 +44,7 @@ body {
   flex-flow: column wrap;
   height: 698px;
   justify-content: space-between;
-  padding: 0 10%;
-  margin: 36px 0 26px;
+  padding: 36px 233px 26px;
   width: 100%;
 }
 
@@ -57,8 +55,9 @@ body {
   box-shadow: 0 4px 10px 0 $black-05;
   display: flex;
   height: 70px;
-  justify-content: space-around;
+  justify-content: space-between;
   left: 0;
+  padding: 0 270px;
   position: sticky;
   top: 0;
   width: 100%;
