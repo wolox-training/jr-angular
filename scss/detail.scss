@@ -33,14 +33,6 @@
   width: 540px;
 }
 
-.main-container {
-  box-shadow: 4px 4px 10px 0 $black-05;
-  display: flex;
-  height: 416px;
-  margin: 24px;
-  width: 900px;
-}
-
 .book-cover {
   height: 368px;
   margin-right: 26px;
@@ -48,6 +40,9 @@
 }
 
 .book-container {
+  box-shadow: 4px 4px 10px 0 $black-05;
   display: flex;
   margin: 24px;
+  padding: 24px;
+  width: 900px;
 }
