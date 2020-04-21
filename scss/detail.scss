@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
 
-.title {
+.header {
+  align-items: center;
   border-bottom: 4px solid $earls-green;
+  display: flex;
+  padding: 12px 0;
+}
+
+.title {
   font-size: 32px;
   font-weight: bold;
-  padding: 12px 0;
-  width: 100%;
+  margin-right: 8px;
 }
 
 .subtitle {
