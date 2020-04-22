@@ -28,22 +28,20 @@ body {
 .book-item {
   align-items: center;
   background-color: $white;
-  box-shadow: 4px 4px 10px 0 $black-05;
+  box-shadow: $shadow-black-05;
   display: flex;
   flex-direction: column;
   height: 300px;
   justify-content: center;
+  margin: 18px;
   padding: 28px 28px 23px;
   width: 198px;
 }
 
 .list-container {
-  align-items: center;
   background-color: $wild-sand;
   display: flex;
-  flex-flow: column wrap;
-  height: 698px;
-  justify-content: space-between;
+  flex-flow: row wrap;
   padding: 36px 233px 26px;
   width: 100%;
 }
