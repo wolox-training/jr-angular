@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
 
-.title {
+.header {
+  align-items: center;
   border-bottom: 4px solid $earls-green;
+  display: flex;
+  padding: 12px 0;
+}
+
+.title {
   font-size: 32px;
   font-weight: bold;
-  padding: 12px 0;
-  width: 100%;
+  margin-right: 8px;
 }
 
 .subtitle {
@@ -33,39 +38,31 @@
   width: 540px;
 }
 
-.main-container {
-  box-shadow: $shadow-black-05;
-  display: flex;
-  height: 416px;
-  margin: 24px;
-  width: 900px;
-}
-
 .book-cover {
   height: 368px;
   width: 261px;
 }
 
 .book-container {
+  box-shadow: 4px 4px 10px 0 $black-05;
   display: flex;
   margin: 24px;
+  padding: 24px;
+  width: 900px;
 }
 
 .cover-container {
   position: relative;
   margin-right: 26px;
-}
-
-.badge {
 
   &::after {
     background: url(images/badge.png) center / contain no-repeat;
-    bottom: 271.71px;
+    bottom: 272px;
     content: '';
-    height: 118.57px;
-    left: 199.73px;
+    height: 118px;
+    left: 200px;
     position: absolute;
     transform: rotate(15deg);
-    width: 94.53px;
+    width: 95px;
   }
 }
