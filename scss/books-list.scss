@@ -39,3 +39,30 @@
   padding: 36px 233px 26px;
   width: 100%;
 }
+
+.navbar {
+  align-items: center;
+  background-color: $white;
+  border-top: 6px solid $cerulean;
+  box-shadow: 0 4px 10px 0 $black-05;
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+  left: 0;
+  padding: 0 270px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.w-logo {
+  height: 70px;
+  width: 212px;
+}
+
+.logout {
+  font-size: 18px;
+  height: 18px;
+  margin-bottom: 6px;
+  width: 63px;
+}
