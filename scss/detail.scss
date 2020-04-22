@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
 
-.title {
+.header {
+  align-items: center;
   border-bottom: 4px solid $earls-green;
+  display: flex;
+  padding: 12px 0;
+}
+
+.title {
   font-size: 32px;
   font-weight: bold;
-  padding: 12px 0;
-  width: 540px;
+  margin-right: 8px;
 }
 
 .subtitle {
@@ -33,13 +38,16 @@
   width: 540px;
 }
 
-.book-container {
-  display: flex;
-  margin: 24px;
-}
-
 .book-cover {
   height: 368px;
   margin-right: 26px;
   width: 261px;
+}
+
+.book-container {
+  box-shadow: 4px 4px 10px 0 $black-05;
+  display: flex;
+  margin: 24px;
+  padding: 24px;
+  width: 900px;
 }
