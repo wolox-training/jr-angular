@@ -40,7 +40,6 @@
 
 .book-cover {
   height: 368px;
-  margin-right: 26px;
   width: 261px;
 }
 
@@ -50,4 +49,20 @@
   margin: 24px;
   padding: 24px;
   width: 900px;
+}
+
+.cover-container {
+  position: relative;
+  margin-right: 26px;
+
+  &::after {
+    background: url(images/badge.png) center / contain no-repeat;
+    bottom: 272px;
+    content: '';
+    height: 118px;
+    left: 200px;
+    position: absolute;
+    transform: rotate(15deg);
+    width: 95px;
+  }
 }
