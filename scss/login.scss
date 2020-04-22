@@ -22,21 +22,16 @@
 }
 
 .login-btn {
+  @extend %generic-btn;
   background-color: $earls-green;
   color: $white;
   margin-top: 24px;
 }
 
 .sign-up-btn {
+  @extend %generic-btn;
   border: 2px solid $earls-green;
   color: $earls-green;
-}
-
-.generic-btn {
-  border-radius: 5px;
-  font-size: 16px;
-  height: 32px;
-  width: 100%
 }
 
 .login-elements {
