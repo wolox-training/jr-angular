@@ -54,18 +54,15 @@
 .cover-container {
   position: relative;
   margin-right: 26px;
-}
-
-.badge {
 
   &::after {
     background: url(images/badge.png) center / contain no-repeat;
-    bottom: 271.71px;
+    bottom: 272px;
     content: '';
-    height: 118.57px;
-    left: 199.73px;
+    height: 118px;
+    left: 200px;
     position: absolute;
     transform: rotate(15deg);
-    width: 94.53px;
+    width: 95px;
   }
 }
