@@ -1,0 +1,45 @@
+.login-container {
+  background-color: $wild-sand;
+  border-top: 8px solid $cerulean;
+  height: 400px;
+  margin: 15% 40%;
+  padding: 20px 24px 24px;
+  width: 300px
+}
+
+.data-label {
+  align-self: flex-start;
+  font-size: 16px;
+  height: 22px;
+  margin: 16px 0 8px;
+  width: 100%;
+}
+
+.data-input {
+  border-radius: 5px;
+  height: 32px;
+  width: 252px;
+}
+
+.login-btn {
+  @extend %generic-btn;
+  background-color: $earls-green;
+  color: $white;
+  margin-top: 24px;
+}
+
+.sign-up-btn {
+  @extend %generic-btn;
+  border: 2px solid $earls-green;
+  color: $earls-green;
+}
+
+.login-elements {
+  align-items: center;
+  border-bottom: 2px solid $silver-chalice;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  width: 100%;
+}

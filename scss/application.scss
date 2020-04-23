@@ -1,14 +1,11 @@
 @import 'equalizer';
 @import 'variables/colors';
 @import 'variables/constant-values';
+@import 'variables/generic-styles';
 @import 'detail';
 @import 'books-list';
+@import 'login';
 
 * {
   font-family: 'Roboto', sans-serif;
-}
-
-body {
-  height: 1200px;
-  background-color: $wild-sand;
 }
