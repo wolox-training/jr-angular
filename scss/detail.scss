@@ -49,7 +49,6 @@
   flex-direction: column;
   height: 768px;
   justify-content: center;
-  width: 100%;
 }
 
 .book-container {
@@ -68,11 +67,11 @@
     background: url(images/badge.png) center / contain no-repeat;
     bottom: 272px;
     content: '';
-    height: 118px;
+    height: $badge-standard-height;
     left: 200px;
     position: absolute;
     transform: rotate(15deg);
-    width: 95px;
+    width: $badge-standard-width;
   }
 }
 
@@ -93,5 +92,87 @@
     position: absolute;
     right: 100px;
     width: 20px;
+  }
+}
+
+@media only screen and (max-width: $mobile-width-breakpoint) {
+  .main-container {
+    background-color: $wild-sand;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 667px;
+    margin: 15% 30%;
+    padding: 32px 20px 65px;
+    width: 376px;
+  }
+
+  .book-container {
+    background-color: $white;
+    box-shadow: $shadow-black-05;
+    display: flex;
+    flex-direction: column;
+    height: 570px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .book-cover {
+    height: 299px;
+    width: 212px;
+  }
+
+  .cover-container {
+    align-self: center;
+    margin-right: 0;
+    padding-top: 38px;
+
+    &::after {
+      bottom: 235px;
+      height: $badge-responsive-height;
+      left: 160px;
+      width: $badge-responsive-width;
+    }
+  }
+
+  .book-detail {
+    align-self: center;
+    margin-left: 0;
+    padding-top: 10px;
+    width: 300px;
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 4px;
+  }
+
+  .subtitle {
+    margin-right: 4px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .placeholder {
+    font-size: 14px;
+  }
+
+  .genre {
+    font-size: 16px;
+  }
+
+  .header {
+    padding: 20px 0 6px;
+  }
+
+  .description {
+    margin: 18px 0;
+  }
+
+  .back-link {
+    position: relative;
+    left: 40px;
+    top: 35px;
   }
 }
