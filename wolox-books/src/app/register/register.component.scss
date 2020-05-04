@@ -1,5 +1,4 @@
 @import '../../scss/vbles/colors';
-@import '../../scss/vbles/generic-styles';
 
 .form-container {
   background-color: $wild-sand;
@@ -40,5 +39,5 @@
 }
 
 .errorMsge {
-  color: red;
+  color: $crimson;
 }
