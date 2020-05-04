@@ -26,12 +26,14 @@
 
 .data-input {
   border-radius: 5px;
+  color: $black;
   height: 32px;
   width: 252px;
 }
 
 .data-label {
   align-self: flex-start;
+  color: $black;
   font-size: 16px;
   height: 22px;
   margin: 16px 0 8px;
