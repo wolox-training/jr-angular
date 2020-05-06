@@ -53,7 +53,9 @@ export class RegisterComponent implements OnInit {
   onSubmit = () => {
     const user = new User(this.registerForm.value);
     this.userService.createUser(user.paramsParser()).subscribe(
-      data => console.log(`Success! New user created:\n${data}`),
+      data => {
+        console.log(`Success! New user created:\n${JSON.stringify(data)}`)
+      },
       error => console.error(error.message)
     );
     this.registerForm.reset();
