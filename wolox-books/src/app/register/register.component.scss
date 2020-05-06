@@ -1,10 +1,11 @@
-@import '../../scss/vbles/colors';
+@import '../../scss/variables/colors';
+@import '../../scss/generic-styles';
 
 .form-container {
   background-color: $wild-sand;
   border-top: 8px solid $cerulean;
   height: 100%;
-  margin: 15% 40%;
+  margin: 100px auto;
   padding: 20px 24px 24px;
   width: 300px
 }
@@ -40,6 +41,23 @@
   width: 100%;
 }
 
-.errorMsge {
+.sign-up-btn {
+  @extend %generic-btn;
+  background-color: $earls-green;
+  color: $white;
+  margin-top: 24px;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.login-btn {
+  @extend %generic-btn;
+  border: 2px solid $earls-green;
+  color: $earls-green;
+}
+
+.error-message {
   color: $crimson;
 }
