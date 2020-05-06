@@ -10,6 +10,7 @@
   background-color: $earls-green;
   color: $white;
   margin-top: 24px;
+  cursor: pointer;
 
   &:disabled {
     cursor: not-allowed;
