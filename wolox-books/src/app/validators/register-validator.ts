@@ -1,5 +1,6 @@
 export class RegisterValidator {
 
+  readonly passwordRegexPattern = '^(?=.*[A-Z])(?=.*[0-9]).*$';
   readonly errorMessages = {
     required: 'This field is required',
     email: 'Invalid email format',
