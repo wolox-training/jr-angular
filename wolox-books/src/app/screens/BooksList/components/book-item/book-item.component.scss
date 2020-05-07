@@ -1,0 +1,42 @@
+@import 'src/scss/vbles/colors';
+@import 'src/scss/vbles/constant-values';
+
+.book-cover-mini {
+  height: 200px;
+  width: 142px;
+}
+
+.book-title {
+  color: $black;
+  font-size: 16px;
+  font-weight: 700;
+  height: 15px;
+  margin: 16px 61px 4px 28px;
+  width: 109px;
+}
+
+.book-author {
+  color: $gray;
+  font-size: 14px;
+  height: 14px;
+  margin: 4px 61px 0 28px;
+  width: 109px;
+}
+
+.book-item {
+  align-items: center;
+  background-color: $white;
+  box-shadow: $shadow-black-05;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: center;
+  margin: 18px;
+  padding: 28px 28px 23px;
+  width: 198px;
+  transition: transform 0.5s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

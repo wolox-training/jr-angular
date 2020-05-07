@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService) { }
+  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -42,7 +43,10 @@ export class LoginComponent implements OnInit {
           client: res.headers.get('client'),
           uid: res.headers.get('uid')
         };
-        console.log(headers)
+        localStorage.setItem('accessToken', res.headers.get('access-token'));
+        localStorage.setItem('client', res.headers.get('client'));
+        localStorage.setItem('uid', res.headers.get('uid'));
+        this.router.navigate(['/home']);
       },
       error => console.error(error.message)
     );

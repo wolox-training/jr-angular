@@ -1,0 +1,9 @@
+@import 'src/scss/vbles/colors';
+
+.list-container {
+  background-color: $wild-sand;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 36px 233px 26px;
+  width: 100%;
+}

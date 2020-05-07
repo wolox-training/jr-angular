@@ -55,10 +55,10 @@ export class RegisterComponent implements OnInit {
     const user = new User(this.registerForm.value);
     this.userService.createUser(user.paramsParser()).subscribe(
       data => {
-        console.log(`Success! New user created:\n${JSON.stringify(data)}`)
+        console.log(`Success! New user created:\n${JSON.stringify(data)}`);
+        this.router.navigate(['/login']);
       },
       error => console.error(error.message)
     );
-    this.router.navigate(['/login']);
   }
 }

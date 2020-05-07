@@ -1,6 +1,6 @@
 <form [formGroup]="loginForm" class="form-container" (ngSubmit)="onSubmit()">
   <div class="form-elements">
-    <img src="../../assets/w-logo.png" alt="Wolox logo" class="w-logo">
+    <img src="assets/w-logo.png" alt="Wolox logo" class="w-logo">
     <label class="data-label">Email</label>
     <input class="data-input" type="email" formControlName="email">
     <span class="error-message" *ngIf="loginForm.get('email').touched">
@@ -11,7 +11,7 @@
     <span class="error-message" *ngIf="loginForm.get('password').touched">
       {{ errorMessage('password') }}
     </span>
-    <button class="sign-up-btn" type="submit" [disabled]="loginForm.invalid">Login</button>
+    <button class="login-btn" type="submit" [disabled]="loginForm.invalid">Login</button>
   </div>
-  <button class="login-btn" type="button" [routerLink]="['/sign-up']">Sign Up</button>
+  <button class="sign-up-btn" type="button" [routerLink]="['/sign-up']">Sign Up</button>
 </form>
