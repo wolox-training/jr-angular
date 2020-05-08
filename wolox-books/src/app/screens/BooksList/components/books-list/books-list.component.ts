@@ -7,11 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksListComponent implements OnInit {
 
-  books = [1,2,3,4,5,6,7,8].map(
-    item => { return { image: 'assets/book-cover.png', author: 'Título del libro', title: 'Autor del libro' } }
-  );
+  books = [];
 
-  constructor() { }
+  constructor() {
+    for (var i = 0; i < 8; i++) {
+      this.books.push(
+        { image: 'assets/book-cover.png', author: 'Título del libro', title: 'Autor del libro' }
+      );
+    }
+  }
 
   ngOnInit(): void {
   }
