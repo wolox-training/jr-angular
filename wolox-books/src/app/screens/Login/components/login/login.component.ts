@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('accessToken', res.headers.get('access-token'));
         localStorage.setItem('client', res.headers.get('client'));
         localStorage.setItem('uid', res.headers.get('uid'));
-        this.router.navigate(['/home']);
+        this.router.navigate(['/auth/books']);
       },
       error => console.error(error.message)
     );

@@ -56,7 +56,7 @@ export class RegisterComponent implements OnInit {
     this.userService.createUser(user.paramsParser()).subscribe(
       data => {
         console.log(`Success! New user created:\n${JSON.stringify(data)}`);
-        this.router.navigate(['/login']);
+        this.router.navigate(['/unauth/login']);
       },
       error => console.error(error.message)
     );

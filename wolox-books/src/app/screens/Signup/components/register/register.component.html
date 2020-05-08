@@ -17,6 +17,6 @@
       <span class="errorMsge" *ngIf="registerForm.get('confirmPassword').touched">{{ errorMessage('confirmPassword') }}</span>
       <app-button [buttonClass]="'sign-up-btn'" [buttonType]="'submit'" [buttonText]="'Sign Up'" [disabled]="registerForm.invalid"></app-button>
     </div>
-    <app-button [buttonClass]="'login-btn'" [buttonType]="'button'" [buttonText]="'Login'" [routerLink]="['/login']"></app-button>
+    <app-button [buttonClass]="'login-btn'" [buttonType]="'button'" [buttonText]="'Login'" [routerLink]="['/unauth/login']"></app-button>
   </form>
 </app-auth>
