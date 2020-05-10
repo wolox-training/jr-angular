@@ -1,0 +1,5 @@
+$mobile-width-breakpoint: 1024px;
+$badge-standard-width: 95px;
+$badge-standard-height: 118px;
+$badge-responsive-width: calc(#{$badge-standard-width} - #{$badge-standard-width} * 0.3);
+$badge-responsive-height: calc(#{$badge-standard-height} - #{$badge-standard-height} * 0.3);

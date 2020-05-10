@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from 'app/services/book.service';
 import { FilterBooksPipe } from 'app/pipes/filter-books.pipe';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-books-list',
@@ -12,12 +13,14 @@ export class BooksListComponent implements OnInit {
   books = [];
   filterText = '';
 
-  constructor(private bookService: BookService) { }
+  constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit(): void {
     this.bookService.getBooks().subscribe(
       res => {
-        this.books = res['page'].map(book => { return { image: book.image_url, author: book.author, title: book.title } });
+        this.books = res['page'].map(
+            book => { return { id: book.id, image: book.image_url, author: book.author, title: book.title } }
+          );
       },
       error => console.error(error.message)
     );

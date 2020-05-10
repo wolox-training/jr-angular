@@ -2,6 +2,6 @@
 <div class="list-container">
   <input [(ngModel)]="filterText" type="text" class="filter-input" placeholder="Busca por el título del libro">
   <div class="book-container">
-    <app-book-item *ngFor="let book of (books | filterBooks:filterText)" [imageSrc]="book.image" [bookAuthor]="book.author" [bookTitle]="book.title"></app-book-item>
+    <app-book-item *ngFor="let book of (books | filterBooks:filterText)" [imageSrc]="book.image" [bookAuthor]="book.author" [bookTitle]="book.title" [routerLink]="['/auth/books', book.id]"></app-book-item>
   </div>
 </div>

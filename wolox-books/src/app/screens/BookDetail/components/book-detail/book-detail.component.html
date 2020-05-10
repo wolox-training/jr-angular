@@ -1,0 +1,26 @@
+<div class="main-container">
+  <a class="back-link" href="..">Atrás</a>
+  <div class="book-container">
+    <div class="header">
+      <h1 class="title">{{ book.title }}</h1>
+      <span class="placeholder genre">{{ book.genre }}</span>
+    </div>
+    <div class="cover-container" [ngClass]="{ 'badge':book.author === bestSellerAuthor }">
+      <img [src]="book.image_url" class="book-cover" alt="Book cover">
+    </div>
+    <div class="book-detail">
+      <div class="description">
+        <h4 class="subtitle">Autor del libro:</h4>
+        <p class="placeholder">{{ book.author }}</p>
+      </div>
+      <div class="description">
+        <h4 class="subtitle">Editorial:</h4>
+        <p class="placeholder">{{ book.editorial }}</p>
+      </div>
+      <div class="description">
+        <h4 class="subtitle">Año de publicación:</h4>
+        <p class="placeholder">{{ book.year }}</p>
+      </div>
+    </div>
+  </div>
+</div>
