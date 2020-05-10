@@ -15,6 +15,7 @@ import { BookItemComponent } from './screens/BooksList/components/book-item/book
 import { AuthGuard } from './guards/auth.guard';
 import { UnauthGuard } from './guards/unauth.guard';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { FilterBooksPipe } from './pipes/filter-books.pipe';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     BooksListComponent,
     NavbarComponent,
     BookItemComponent,
+    FilterBooksPipe,
   ],
   imports: [
     BrowserModule,

@@ -7,3 +7,19 @@
   padding: 36px 233px 26px;
   width: 100%;
 }
+
+.filter-input {
+  background: url('assets/search-logo.png') no-repeat scroll 97% 50% $white;
+  border-radius: 5px;
+  color: $gray;
+  font-size: 20px;
+  height: 50px;
+  margin: 0 144px 27px;
+  padding: 15px;
+  width: 646px;
+}
+
+.book-container {
+  display: flex;
+  flex-flow: inherit;
+}

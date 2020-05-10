@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from 'app/services/book.service';
+import { FilterBooksPipe } from 'app/pipes/filter-books.pipe';
 
 @Component({
   selector: 'app-books-list',
@@ -9,6 +10,7 @@ import { BookService } from 'app/services/book.service';
 export class BooksListComponent implements OnInit {
 
   books = [];
+  filterText = '';
 
   constructor(private bookService: BookService) { }
 
