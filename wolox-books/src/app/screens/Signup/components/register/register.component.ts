@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
   registerValidator: RegisterValidator = new RegisterValidator();
+  user: User;
 
   constructor(private formBuilder: FormBuilder, private userService: UserService) { }
 
@@ -29,14 +30,25 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  onSubmit = () => {
-    const user = new User(this.registerForm.value);
-    this.userService.createUser(user.paramsParser()).subscribe(
+  onSubmit() {
+    this.user = this.registerForm.value;
+    this.userService.createUser(this.userParser()).subscribe(
       data => {
         console.log(`Success! New user created:\n${JSON.stringify(data)}`);
         this.registerForm.reset();
       },
       error => console.error(error.message)
     );
+  }
+
+  userParser() {
+    return {
+      first_name: this.user.name,
+      last_name: this.user.lastName,
+      email: this.user.email,
+      password: this.user.password,
+      password_confirmation: this.user.password,
+      locale: "en"
+    }
   }
 }
