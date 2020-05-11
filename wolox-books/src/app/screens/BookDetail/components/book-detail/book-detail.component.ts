@@ -10,14 +10,23 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BookDetailComponent implements OnInit {
 
-  book: Book = new Book({});
+  book: Book = {
+    id: 0,
+    author: 'Autor del libro',
+    title: 'Título del libro',
+    image_url: 'assets/book-cover.png',
+    editorial: 'Nombre de la editorial',
+    year: 'Año de publicación',
+    genre: '(género)',
+    current_rent: ''
+  };
   readonly bestSellerAuthor = 'Piers Anthony';
 
   constructor(private bookService: BookService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.bookService.getBook(this.route.snapshot.params.id).subscribe(
-      res => this.book = new Book(res),
+      res => this.book = res,
       error => console.error(error.message)
     );
   }
