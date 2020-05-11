@@ -10,4 +10,4 @@
 .DS_Store
 
 # Environment
-environments/
+wolox-books/src/environments/
