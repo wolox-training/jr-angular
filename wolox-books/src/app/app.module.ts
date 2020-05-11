@@ -5,9 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthComponent } from './screens/Signup/components/auth/auth.component';
 import { RegisterComponent } from './screens/Signup/components/register/register.component';
-import { ButtonComponent } from './components/Button/button.component';
 import { LoginComponent } from './screens/Login/components/login/login.component';
 import { BooksListComponent } from './screens/BooksList/components/books-list/books-list.component';
 import { NavbarComponent } from './screens/BooksList/components/navbar/navbar.component';
@@ -18,13 +16,11 @@ import { UnauthGuard } from './guards/unauth.guard';
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent,
     RegisterComponent,
-    ButtonComponent,
     LoginComponent,
     BooksListComponent,
     NavbarComponent,
-    BookItemComponent,
+    BookItemComponent
   ],
   imports: [
     BrowserModule,
