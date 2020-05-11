@@ -4,12 +4,12 @@
     <label class="data-label">Email</label>
     <input class="data-input" type="email" formControlName="email">
     <span class="error-message" *ngIf="loginForm.get('email').touched">
-      {{ errorMessage('email') }}
+      {{ validator.errorMessage('email', loginForm) }}
     </span>
     <label class="data-label">Password</label>
     <input class="data-input" type="password" formControlName="password">
     <span class="error-message" *ngIf="loginForm.get('password').touched">
-      {{ errorMessage('password') }}
+      {{ validator.errorMessage('password', loginForm) }}
     </span>
     <button class="login-btn" type="submit" [disabled]="loginForm.invalid">Login</button>
   </div>
