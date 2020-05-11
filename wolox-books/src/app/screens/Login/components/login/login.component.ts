@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'app/services/user.service';
+import { RegisterValidator } from 'app/validators/register-validator';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,7 @@ import { UserService } from 'app/services/user.service';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  validator: RegisterValidator = new RegisterValidator();
 
   constructor(private formBuilder: FormBuilder, private userService: UserService) { }
 
@@ -20,20 +22,6 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  errorMessage(controlName) {
-    if (this.loginForm.get(controlName).errors) {
-      if (this.loginForm.get(controlName).errors.required) {
-        return 'This field is required';
-      } else if (this.loginForm.get(controlName).errors.email) {
-        return 'Invalid email format';
-      } else if (this.loginForm.get(controlName).errors.pattern) {
-        return 'Must have at least one number and one capital letter';
-      } else if (!this.loginForm.get(controlName).errors.passwordConfirmation) {
-        return 'The passwords must match';
-      }
-    }
-  }
-
   onSubmit() {
     this.userService.loginUser(this.loginForm.value).subscribe(
       res => {
@@ -42,7 +30,7 @@ export class LoginComponent implements OnInit {
           client: res.headers.get('client'),
           uid: res.headers.get('uid')
         };
-        console.log(headers)
+        console.log(headers);
       },
       error => console.error(error.message)
     );
