@@ -1,5 +1,5 @@
 <div class="book-item">
-  <img [src]="imageSrc" alt="Book cover" class="book-cover-mini">
+  <img [src]="(!!imageSrc) ? imageSrc : 'assets/book-cover.png'" alt="Book cover" class="book-cover-mini">
   <h4 class="book-title">{{ bookTitle }}</h4>
   <span class="book-author">{{ bookAuthor }}</span>
 </div>
