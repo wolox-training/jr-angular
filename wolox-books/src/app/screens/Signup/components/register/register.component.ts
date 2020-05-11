@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'app/services/user.service';
 import { User } from 'app/models/user';
 import { Router } from '@angular/router';
+import { RegisterValidator } from 'app/validators/register-validator';
 
 @Component({
   selector: 'app-register',
@@ -12,6 +13,8 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
+  registerValidator: RegisterValidator = new RegisterValidator();
+  user: User;
 
   constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) { }
 
@@ -20,45 +23,33 @@ export class RegisterComponent implements OnInit {
       name: [''],
       lastName: [''],
       email: ['', Validators.compose([Validators.required, Validators.email])],
-      password: ['', Validators.compose([Validators.required, Validators.pattern('^(?=.*[A-Z])(?=.*[0-9]).*$')])],
+      password: ['', Validators.compose([Validators.required,Validators.pattern(this.registerValidator.passwordRegexPattern)])],
       confirmPassword: ['', Validators.required]
     },
     {
-      validator: this.passwordConfirmation('password', 'confirmPassword')
+      validator: this.registerValidator.passwordConfirmation()
     });
   }
 
-  passwordConfirmation = (password, confirmPassword) => {
-    return formGroup => {
-      const userPassword = formGroup.get(password)
-      const confirmedPassword = formGroup.get(confirmPassword);
-
-      return userPassword.value !== confirmedPassword.value && confirmedPassword.setErrors({ passwordConfirmation: false })
-    }
-  }
-
-  errorMessage = controlName => {
-    if (this.registerForm.get(controlName).errors) {
-      if (this.registerForm.get(controlName).errors.required) {
-        return 'This field is required';
-      } else if (this.registerForm.get(controlName).errors.email) {
-        return 'Invalid email format';
-      } else if (this.registerForm.get(controlName).errors.pattern) {
-        return 'Must have at least one number and one capital letter';
-      } else if (!this.registerForm.get(controlName).errors.passwordConfirmation) {
-        return 'The passwords must match';
-      }
-    }
-  }
-
-  onSubmit = () => {
-    const user = new User(this.registerForm.value);
-    this.userService.createUser(user.paramsParser()).subscribe(
+  onSubmit() {
+    this.user = this.registerForm.value;
+    this.userService.createUser(this.userParser()).subscribe(
       data => {
         console.log(`Success! New user created:\n${JSON.stringify(data)}`);
         this.router.navigate(['/unauth/login']);
       },
       error => console.error(error.message)
     );
+  }
+
+  userParser() {
+    return {
+      first_name: this.user.name,
+      last_name: this.user.lastName,
+      email: this.user.email,
+      password: this.user.password,
+      password_confirmation: this.user.password,
+      locale: "en"
+    }
   }
 }

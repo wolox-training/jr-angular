@@ -1,22 +1,26 @@
-<app-auth>
-  <form [formGroup]="registerForm" class="form-container" (ngSubmit)="onSubmit()">
-    <div class="form-elements">
-      <img src="assets/w-logo.png" alt="Wolox logo" class="w-logo">
-      <label class="data-label">Nombre</label>
-      <input class="data-input" type="text" formControlName="name">
-      <label class="data-label">Apellido</label>
-      <input class="data-input" type="text" formControlName="lastName">
-      <label class="data-label">Email</label>
-      <input class="data-input" type="email" formControlName="email">
-      <span class="errorMsge" *ngIf="registerForm.get('email').touched">{{ errorMessage('email') }}</span>
-      <label class="data-label">Password</label>
-      <input class="data-input" type="password" formControlName="password">
-      <span class="errorMsge" *ngIf="registerForm.get('password').touched">{{ errorMessage('password') }}</span>
-      <label class="data-label">Confirmación de Password</label>
-      <input class="data-input" type="password" formControlName="confirmPassword">
-      <span class="errorMsge" *ngIf="registerForm.get('confirmPassword').touched">{{ errorMessage('confirmPassword') }}</span>
-      <app-button [buttonClass]="'sign-up-btn'" [buttonType]="'submit'" [buttonText]="'Sign Up'" [disabled]="registerForm.invalid"></app-button>
-    </div>
-    <app-button [buttonClass]="'login-btn'" [buttonType]="'button'" [buttonText]="'Login'" [routerLink]="['/unauth/login']"></app-button>
-  </form>
-</app-auth>
+<form [formGroup]="registerForm" class="form-container" (ngSubmit)="onSubmit()">
+  <div class="form-elements">
+    <img src="assets/w-logo.png" alt="Wolox logo" class="w-logo">
+    <label class="data-label">Nombre</label>
+    <input class="data-input" type="text" formControlName="name">
+    <label class="data-label">Apellido</label>
+    <input class="data-input" type="text" formControlName="lastName">
+    <label class="data-label">Email</label>
+    <input class="data-input" type="email" formControlName="email">
+    <span class="error-message" *ngIf="registerForm.get('email').touched">
+      {{ registerValidator.errorMessage('email', registerForm) }}
+    </span>
+    <label class="data-label">Password</label>
+    <input class="data-input" type="password" formControlName="password">
+    <span class="error-message" *ngIf="registerForm.get('password').touched">
+      {{ registerValidator.errorMessage('password', registerForm) }}
+    </span>
+    <label class="data-label">Confirmación de Password</label>
+    <input class="data-input" type="password" formControlName="confirmPassword">
+    <span class="error-message" *ngIf="registerForm.get('confirmPassword').touched">
+      {{ registerValidator.errorMessage('confirmPassword', registerForm) }}
+    </span>
+    <button class="sign-up-btn" type="submit" [disabled]="registerForm.invalid">Sign Up</button>
+  </div>
+  <button class="login-btn" type="button" [routerLink]="['/unauth/login']">Login</button>
+</form>
