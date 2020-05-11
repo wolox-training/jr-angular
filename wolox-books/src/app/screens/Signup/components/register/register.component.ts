@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { RegisterValidator } from 'app/validators/register-validator';
 
 @Component({
   selector: 'app-register',
@@ -9,6 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
+  registerValidator: RegisterValidator = new RegisterValidator();
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -17,38 +19,15 @@ export class RegisterComponent implements OnInit {
       name: [''],
       lastName: [''],
       email: ['', Validators.compose([Validators.required, Validators.email])],
-      password: ['', Validators.compose([Validators.required, Validators.pattern('^(?=.*[A-Z])(?=.*[0-9]).*$')])],
+      password: ['', Validators.compose([Validators.required,Validators.pattern(this.registerValidator.passwordRegexPattern)])],
       confirmPassword: ['', Validators.required]
     },
     {
-      validator: this.passwordConfirmation('password', 'confirmPassword')
+      validator: this.registerValidator.passwordConfirmation()
     });
   }
 
-  passwordConfirmation = (password, confirmPassword) => {
-    return formGroup => {
-      const userPassword = formGroup.get(password)
-      const confirmedPassword = formGroup.get(confirmPassword);
-
-      return userPassword.value !== confirmedPassword.value && confirmedPassword.setErrors({ passwordConfirmation: false })
-    }
-  }
-
-  errorMessage = controlName => {
-    if (this.registerForm.get(controlName).errors) {
-      if (this.registerForm.get(controlName).errors.required) {
-        return 'This field is required';
-      } else if (this.registerForm.get(controlName).errors.email) {
-        return 'Invalid email format';
-      } else if (this.registerForm.get(controlName).errors.pattern) {
-        return 'Must have at least one number and one capital letter';
-      } else if (!this.registerForm.get(controlName).errors.passwordConfirmation) {
-        return 'The passwords must match';
-      }
-    }
-  }
-
-  onSubmit = () => {
+  onSubmit() {
     console.log({ user: this.registerForm.value });
     this.registerForm.reset();
   }
