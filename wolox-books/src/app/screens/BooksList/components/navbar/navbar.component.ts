@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ShoppingCartService } from 'app/services/shopping-cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,9 +9,12 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  bookCounter: number;
+
+  constructor(private router: Router, private shoppingCartService: ShoppingCartService) { }
 
   ngOnInit(): void {
+    this.shoppingCartService.bookCounter.subscribe(bookCount => this.bookCounter = bookCount);
   }
 
   logout() {
