@@ -4,6 +4,7 @@ import { UserService } from 'app/services/user.service';
 import { User } from 'app/models/user';
 import { Router } from '@angular/router';
 import { RegisterValidator } from 'app/validators/register-validator';
+import * as Constants from 'app/utils/constants';
 
 @Component({
   selector: 'app-register',
@@ -15,6 +16,7 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   registerValidator: RegisterValidator = new RegisterValidator();
   user: User;
+  routerLinks = Constants.routerLinks;
 
   constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) { }
 
