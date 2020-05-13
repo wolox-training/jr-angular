@@ -15,6 +15,9 @@ import { UnauthGuard } from './guards/unauth.guard';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { FilterBooksPipe } from './pipes/filter-books.pipe';
 import { BookDetailComponent } from './screens/BookDetail/components/book-detail/book-detail.component';
+import { ShoppingListComponent } from './screens/BooksList/components/shopping-list/shopping-list.component';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './store/books.reducer';
 
 @NgModule({
   declarations: [
@@ -25,14 +28,16 @@ import { BookDetailComponent } from './screens/BookDetail/components/book-detail
     NavbarComponent,
     BookItemComponent,
     FilterBooksPipe,
-    BookDetailComponent
+    BookDetailComponent,
+    ShoppingListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({ book: reducer })
   ],
   providers: [AuthGuard, UnauthGuard, { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }],
   bootstrap: [AppComponent]

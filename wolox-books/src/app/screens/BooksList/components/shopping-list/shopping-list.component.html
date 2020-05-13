@@ -1,0 +1,14 @@
+<div class="modal-window">
+  <div class="shopping-list">
+    <div class="shopping-header">
+      <h1 class="shopping-title">Tu carrito de compras</h1>
+      <a class="close-icon" (click)="closeModal.emit();"></a>
+    </div>
+      <ul class="books-list">
+        <li *ngFor="let book of books | async; let i = index" class="book-item">
+          <span class="book-description">{{ book.title }} - {{ book.author }}</span>
+          <a class="delete-icon" (click)="removeBook(i)"></a>
+        </li>
+      </ul>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 <nav class="navbar">
   <img src="assets/w-logo.png" alt="Wolox logo" class="w-logo">
   <div class="corner-items">
-    <div class="cart-container">
+    <div class="cart-container" (click)="openBooksModal.emit()">
       <img src="assets/shopping-cart.png" class="shopping-cart" alt="Shopping cart">
       <span class="book-counter">{{ bookCounter }}</span>
     </div>

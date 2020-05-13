@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
-import { ShoppingCartService } from 'app/services/shopping-cart.service';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { Book } from 'app/models/book';
+import { AppState } from 'app/store/app.state';
 
 @Component({
   selector: 'app-navbar',
@@ -10,11 +13,15 @@ import { ShoppingCartService } from 'app/services/shopping-cart.service';
 export class NavbarComponent implements OnInit {
 
   bookCounter: number;
+  @Output() openBooksModal = new EventEmitter();
+  booksStore: Observable<Book[]>;
 
-  constructor(private router: Router, private shoppingCartService: ShoppingCartService) { }
+  constructor(private router: Router, private store: Store<AppState>) {
+    this.booksStore = store.select('book');
+  }
 
   ngOnInit(): void {
-    this.shoppingCartService.bookCounter.subscribe(bookCount => this.bookCounter = bookCount);
+    this.booksStore.subscribe(books => this.bookCounter = books.length);
   }
 
   logout() {

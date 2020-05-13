@@ -1,5 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ShoppingCartService } from 'app/services/shopping-cart.service';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { Book } from 'app/models/book';
+import { AppState } from 'app/store/app.state';
+import * as BookActions from 'app/store/books.actions';
 
 @Component({
   selector: 'app-book-item',
@@ -8,20 +12,17 @@ import { ShoppingCartService } from 'app/services/shopping-cart.service';
 })
 export class BookItemComponent implements OnInit {
 
-  @Input() imageSrc: string;
-  @Input() bookTitle: string;
-  @Input() bookAuthor: string;
+  @Input() book: Book;
   readonly defaultImageSrc = 'assets/book-cover.png';
   bookCounter: number;
 
-  constructor(private shoppingCartService: ShoppingCartService) { }
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
-    this.shoppingCartService.bookCounter.subscribe(bookCount => this.bookCounter = bookCount);
   }
 
   addBookToCart() {
     event.stopPropagation();
-    this.shoppingCartService.addBook(++this.bookCounter);
+    this.store.dispatch(new BookActions.AddBook(this.book));
   }
 }

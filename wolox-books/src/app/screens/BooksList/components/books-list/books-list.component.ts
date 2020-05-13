@@ -12,16 +12,13 @@ export class BooksListComponent implements OnInit {
 
   books = [];
   filterText = '';
+  closedModal = true;
 
   constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit(): void {
     this.bookService.getBooks().subscribe(
-      res => {
-        this.books = res['page'].map(
-            book => { return { id: book.id, image: book.image_url, author: book.author, title: book.title } }
-          );
-      },
+      res => this.books = res['page'].map(book => book),
       error => console.error(error.message)
     );
   }
