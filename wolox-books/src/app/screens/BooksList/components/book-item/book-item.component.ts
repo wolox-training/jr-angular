@@ -14,7 +14,6 @@ export class BookItemComponent implements OnInit {
 
   @Input() book: Book;
   readonly defaultImageSrc = 'assets/book-cover.png';
-  bookCounter: number;
 
   constructor(private store: Store<AppState>) { }
 
