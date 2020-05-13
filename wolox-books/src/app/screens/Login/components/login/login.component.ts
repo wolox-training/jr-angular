@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'app/services/user.service';
 import { RegisterValidator } from 'app/validators/register-validator';
+import * as Constants from 'app/utils/constants';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   validator: RegisterValidator = new RegisterValidator();
+  routerLinks = Constants.routerLinks;
 
   constructor(private formBuilder: FormBuilder, private userService: UserService) { }
 
