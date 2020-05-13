@@ -4,6 +4,7 @@ import { UserService } from 'app/services/user.service';
 import { User } from 'app/models/user';
 import { Router } from '@angular/router';
 import { RegisterValidator } from 'app/validators/register-validator';
+import * as Constants from 'app/utils/constants';
 
 @Component({
   selector: 'app-register',
@@ -15,6 +16,7 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   registerValidator: RegisterValidator = new RegisterValidator();
   user: User;
+  routerLinks = Constants.routerLinks;
 
   constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) { }
 
@@ -36,7 +38,7 @@ export class RegisterComponent implements OnInit {
     this.userService.createUser(this.userParser()).subscribe(
       data => {
         console.log(`Success! New user created:\n${JSON.stringify(data)}`);
-        this.router.navigate(['/unauth/login']);
+        this.router.navigate([this.routerLinks.login]);
       },
       error => console.error(error.message)
     );
