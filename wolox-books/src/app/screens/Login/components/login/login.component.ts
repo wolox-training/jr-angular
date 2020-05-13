@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'app/services/user.service';
 import { RegisterValidator } from 'app/validators/register-validator';
 import * as Constants from 'app/utils/constants';
 
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   validator: RegisterValidator = new RegisterValidator();
   routerLinks = Constants.routerLinks;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private userService: UserService) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -24,6 +25,16 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.loginForm.value);
+    this.userService.loginUser(this.loginForm.value).subscribe(
+      res => {
+        const headers = {
+          accessToken: res.headers.get('access-token'),
+          client: res.headers.get('client'),
+          uid: res.headers.get('uid')
+        };
+        console.log(headers);
+      },
+      error => console.error(error.message)
+    );
   }
 }

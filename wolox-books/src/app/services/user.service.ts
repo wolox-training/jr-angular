@@ -7,11 +7,18 @@ import { environment } from 'environments/environment';
 })
 export class UserService {
 
-  readonly REGISTER_URL = `${environment.booksApiUrl}/users`;
+  readonly API_URLS = {
+    register: `${environment.booksApiUrl}/users`,
+    login: `${environment.booksApiUrl}/users/sign_in`
+  };
 
   constructor(private http: HttpClient) { }
 
   createUser(userData) {
-    return this.http.post(this.REGISTER_URL, userData);
+    return this.http.post(this.API_URLS.register, userData);
+  }
+
+  loginUser(userData) {
+    return this.http.post(this.API_URLS.login, userData, { observe: 'response' });
   }
 }
