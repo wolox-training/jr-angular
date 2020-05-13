@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ShoppingCartService } from 'app/services/shopping-cart.service';
+import * as Constants from 'app/utils/constants';
 
 @Component({
   selector: 'app-navbar',
@@ -10,6 +11,7 @@ import { ShoppingCartService } from 'app/services/shopping-cart.service';
 export class NavbarComponent implements OnInit {
 
   bookCounter: number;
+  routerLinks = Constants.routerLinks;
 
   constructor(private router: Router, private shoppingCartService: ShoppingCartService) { }
 
@@ -19,6 +21,6 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     localStorage.clear();
-    this.router.navigate(['/unauth/login']);
+    this.router.navigate([this.routerLinks.login]);
   }
 }
