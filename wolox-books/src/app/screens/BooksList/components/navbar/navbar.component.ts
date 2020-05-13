@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { Book } from 'app/models/book';
 import { AppState } from 'app/store/app.state';
+import * as Constants from 'app/utils/constants';
 
 @Component({
   selector: 'app-navbar',
@@ -15,6 +16,7 @@ export class NavbarComponent implements OnInit {
   bookCounter: number;
   @Output() openBooksModal = new EventEmitter();
   booksStore: Observable<Book[]>;
+  routerLinks = Constants.routerLinks;
 
   constructor(private router: Router, private store: Store<AppState>) {
     this.booksStore = store.select('book');
@@ -26,6 +28,6 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     localStorage.clear();
-    this.router.navigate(['/unauth/login']);
+    this.router.navigate([this.routerLinks.login]);
   }
 }
