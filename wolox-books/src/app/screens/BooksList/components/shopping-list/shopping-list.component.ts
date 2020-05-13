@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { Book } from 'app/models/book';
@@ -12,14 +12,16 @@ import * as BookActions from 'app/store/books.actions';
 })
 export class ShoppingListComponent implements OnInit {
 
-  books: Observable<Book[]>;
+  booksStore: Observable<Book[]>;
   @Output() closeModal = new EventEmitter();
+  books: Book[];
 
   constructor(private store: Store<AppState>) {
-    this.books = store.select('book');
+    this.booksStore = store.select('book');
   }
 
   ngOnInit(): void {
+    this.booksStore.subscribe(books => this.books = books);
   }
 
   removeBook(index) {
