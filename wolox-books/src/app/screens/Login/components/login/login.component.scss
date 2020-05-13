@@ -1,0 +1,63 @@
+@import 'src/scss/variables/colors';
+@import 'src/scss/generic-styles';
+
+.form-container {
+  background-color: $wild-sand;
+  border-top: 8px solid $cerulean;
+  height: 100%;
+  margin: 15% 40%;
+  padding: 20px 24px 24px;
+  width: 300px
+}
+
+.form-elements {
+  align-items: center;
+  border-bottom: 2px solid $silver-chalice;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  width: 100%;
+}
+
+.w-logo {
+  height: 70px;
+  width: 212px;
+}
+
+.data-input {
+  border-radius: 5px;
+  color: $black;
+  height: 32px;
+  width: 252px;
+}
+
+.data-label {
+  align-self: flex-start;
+  color: $black;
+  font-size: 16px;
+  height: 22px;
+  margin: 16px 0 8px;
+  width: 100%;
+}
+
+.sign-up-btn {
+  @extend %generic-btn;
+  background-color: $earls-green;
+  color: $white;
+  margin-top: 24px;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.login-btn {
+  @extend %generic-btn;
+  border: 2px solid $earls-green;
+  color: $earls-green;
+}
+
+.error-message {
+  color: $crimson;
+}
