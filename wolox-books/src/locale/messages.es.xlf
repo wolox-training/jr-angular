@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es-ES" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="nameLabel" datatype="html">
+        <source>Name</source>
+        <target>Nombre</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/Signup/components/register/register.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">Name label in form</note>
+        <note priority="1" from="meaning">Name label</note>
+      </trans-unit>
+      <trans-unit id="lastnameLabel" datatype="html">
+        <source>Lastname</source>
+        <target>Apellido</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/Signup/components/register/register.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Lastname label in form</note>
+        <note priority="1" from="meaning">Lastname label</note>
+      </trans-unit>
+      <trans-unit id="emailLabel" datatype="html">
+        <source>Email</source>
+        <target>Correo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/Signup/components/register/register.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/Login/components/login/login.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">Email label in form</note>
+        <note priority="1" from="meaning">Email label</note>
+      </trans-unit>
+      <trans-unit id="passwordLabel" datatype="html">
+        <source>Password</source>
+        <target>Contraseña</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/Signup/components/register/register.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/Login/components/login/login.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">Password label in form</note>
+        <note priority="1" from="meaning">Password label</note>
+      </trans-unit>
+      <trans-unit id="confirmationLabel" datatype="html">
+        <source>Password Confirmation</source>
+        <target>Confirmación de Contraseña</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/Signup/components/register/register.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">Confirmation label in form</note>
+        <note priority="1" from="meaning">Confirmation label</note>
+      </trans-unit>
+      <trans-unit id="signUpBtn" datatype="html">
+        <source>Sign Up</source>
+        <target>Registrarse</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/Signup/components/register/register.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/Login/components/login/login.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="description">SignUp text in btn</note>
+        <note priority="1" from="meaning">SignUp btn</note>
+      </trans-unit>
+      <trans-unit id="loginBtn" datatype="html">
+        <source>Login</source>
+        <target>Iniciar Sesión</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/Signup/components/register/register.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/Login/components/login/login.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">Login text in btn</note>
+        <note priority="1" from="meaning">Login btn</note>
+      </trans-unit>
+      <trans-unit id="searchPlaceholder" datatype="html">
+        <source>Search by the book title</source>
+        <target>Busca por el título del libro</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/BooksList/components/books-list/books-list.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Search bar placeholder</note>
+        <note priority="1" from="meaning">Search placeholder</note>
+      </trans-unit>
+      <trans-unit id="logout" datatype="html">
+        <source>Logout</source>
+        <target>Cerrar Sesión</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/BooksList/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">Texto de cerrar sesión</note>
+        <note priority="1" from="meaning">Cerrar sesón</note>
+      </trans-unit>
+      <trans-unit id="backLink" datatype="html">
+        <source>Back</source>
+        <target>Atrás</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/BookDetail/components/book-detail/book-detail.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Back placeholder link</note>
+        <note priority="1" from="meaning">Back</note>
+      </trans-unit>
+      <trans-unit id="bookAuthor" datatype="html">
+        <source>Author of the book:</source>
+        <target>Autor del libro:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/BookDetail/components/book-detail/book-detail.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">Book author placeholder</note>
+        <note priority="1" from="meaning">Book author</note>
+      </trans-unit>
+      <trans-unit id="publicationYear" datatype="html">
+        <source>Publication year:</source>
+        <target>Año de publicación:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/BookDetail/components/book-detail/book-detail.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">Publication year placeholder</note>
+        <note priority="1" from="meaning">Publication year</note>
+      </trans-unit>
+      <trans-unit id="cartTitle" datatype="html">
+        <source>Your shopping cart</source>
+        <target>Tu carrito de compras</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/BooksList/components/shopping-list/shopping-list.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">Shopping cart title</note>
+        <note priority="1" from="meaning">Cart title</note>
+      </trans-unit>
+      <trans-unit id="emptyTitle" datatype="html">
+        <source>THE SHOPPING CART IS EMPTY</source>
+        <target>EL CARRITO ESTÁ VACÍO</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/BooksList/components/shopping-list/shopping-list.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="description">Title when shopping cart is empty</note>
+        <note priority="1" from="meaning">Empty cart title</note>
+      </trans-unit>
+      <trans-unit id="emptySubtitle" datatype="html">
+        <source>It seems that you don&apos;t have items in your shopping cart.</source>
+        <target>Parece que no tienes items en tu carrito de compras.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/screens/BooksList/components/shopping-list/shopping-list.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="description">Subtitle when shopping cart is empty</note>
+        <note priority="1" from="meaning">Empty cart subtitle</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
