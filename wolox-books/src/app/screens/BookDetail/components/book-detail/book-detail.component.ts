@@ -15,7 +15,7 @@ export class BookDetailComponent implements OnInit {
     author: 'Autor del libro',
     title: 'Título del libro',
     image_url: 'assets/book-cover.png',
-    editorial: 'Nombre de la editorial',
+    editor: 'Nombre de la editorial',
     year: 'Año de publicación',
     genre: '(género)',
     current_rent: ''
