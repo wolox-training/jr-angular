@@ -11,7 +11,7 @@ import * as Constants from 'app/utils/constants';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit{
+export class NavbarComponent implements OnInit {
 
   bookCounter: number;
   @Output() openBooksModal = new EventEmitter();
