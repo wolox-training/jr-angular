@@ -6,12 +6,12 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ShoppingCartService {
 
-  private count = new BehaviorSubject(0);
-  bookCounter = this.count.asObservable();
+  private booksAdded = new BehaviorSubject([]);
+  shoppingCart = this.booksAdded.asObservable();
 
   constructor() { }
 
-  addBook(bookCount) {
-    this.count.next(bookCount);
+  addBook(book) {
+    this.booksAdded.next(book);
   }
 }

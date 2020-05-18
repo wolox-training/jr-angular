@@ -10,16 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BookDetailComponent implements OnInit {
 
-  book: Book = {
-    id: 0,
-    author: 'Autor del libro',
-    title: 'Título del libro',
-    image_url: 'assets/book-cover.png',
-    editorial: 'Nombre de la editorial',
-    year: 'Año de publicación',
-    genre: '(género)',
-    current_rent: ''
-  };
+  book: Book;
+
   readonly bestSellerAuthor = 'Piers Anthony';
 
   constructor(private bookService: BookService, private route: ActivatedRoute) { }

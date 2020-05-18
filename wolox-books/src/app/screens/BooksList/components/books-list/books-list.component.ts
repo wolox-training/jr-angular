@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from 'app/services/book.service';
 import { FilterBooksPipe } from 'app/pipes/filter-books.pipe';
+import { Book } from 'app/models/book';
 import { Router } from '@angular/router';
 import * as Constants from 'app/utils/constants';
 
@@ -11,7 +12,7 @@ import * as Constants from 'app/utils/constants';
 })
 export class BooksListComponent implements OnInit {
 
-  books = [];
+  books: Book[] = [];
   filterText = '';
   routerLinks = Constants.routerLinks;
 
@@ -20,9 +21,7 @@ export class BooksListComponent implements OnInit {
   ngOnInit(): void {
     this.bookService.getBooks().subscribe(
       res => {
-        this.books = res['page'].map(
-            book => { return { id: book.id, image: book.image_url, author: book.author, title: book.title } }
-          );
+        this.books = res['page'].map(book => book);
       },
       error => console.error(error.message)
     );
