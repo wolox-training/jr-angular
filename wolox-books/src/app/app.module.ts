@@ -23,7 +23,7 @@ import { FilterBooksPipe } from './pipes/filter-books.pipe';
     BooksListComponent,
     NavbarComponent,
     BookItemComponent,
-    FilterBooksPipe
+    FilterBooksPipe,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import * as Constants from 'app/utils/constants';
 
@@ -7,14 +7,11 @@ import * as Constants from 'app/utils/constants';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
 
   routerLinks = Constants.routerLinks;
 
   constructor(private router: Router) { }
-
-  ngOnInit(): void {
-  }
 
   logout() {
     localStorage.clear();
