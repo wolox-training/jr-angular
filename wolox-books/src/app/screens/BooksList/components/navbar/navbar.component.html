@@ -1,10 +1,10 @@
 <nav class="navbar">
   <img src="assets/w-logo.png" alt="Wolox logo" class="w-logo">
   <div class="corner-items">
-    <div class="cart-container" (click)="openBooksModal.emit()">
-      <img src="assets/shopping-cart.png" class="shopping-cart" alt="Shopping cart">
+    <div class="cart-container">
+      <button type="button" class="shopping-cart" (click)="openBooksModal.emit()"></button>
       <span class="book-counter">{{ bookCounter }}</span>
     </div>
-    <a class="logout" (click)="logout()" i18n="Cerrar sesón|Texto de cerrar sesión@@logout">Logout</a>
+    <button type="button" class="logout" (click)="logout()" i18n="Cerrar sesón|Texto de cerrar sesión@@logout">Logout</button>
   </div>
 </nav>

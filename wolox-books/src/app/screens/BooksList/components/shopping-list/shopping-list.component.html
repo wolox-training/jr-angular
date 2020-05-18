@@ -2,12 +2,12 @@
   <div class="shopping-list">
     <div class="shopping-header">
       <h1 class="shopping-title" i18n="Cart title|Shopping cart title@@cartTitle">Your shopping cart</h1>
-      <a class="close-icon" (click)="closeModal.emit();"></a>
+      <button type="button" class="close-icon" (click)="closeModal.emit()"></button>
     </div>
     <ul class="books-list" *ngIf="books.length > 0; else emptyCart">
       <li *ngFor="let book of books; let i = index" class="book-item">
         <span class="book-description">{{ book.title }} - {{ book.author }}</span>
-        <a class="delete-icon" (click)="removeBook(i)"></a>
+        <button type="button" class="delete-icon" (click)="removeBook(i)"></button>
       </li>
     </ul>
     <ng-template #emptyCart>
