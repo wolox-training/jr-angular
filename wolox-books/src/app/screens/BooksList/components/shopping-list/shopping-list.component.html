@@ -4,11 +4,18 @@
       <h1 class="shopping-title">Tu carrito de compras</h1>
       <button type="button" class="close-icon" (click)="closeModal.emit()"></button>
     </div>
-    <ul class="books-list">
-      <li *ngFor="let book of books | async; let i = index" class="book-item">
+    <ul class="books-list" *ngIf="books.length > 0; else emptyCart">
+      <li *ngFor="let book of books; let i = index" class="book-item">
         <span class="book-description">{{ book.title }} - {{ book.author }}</span>
         <button type="button" class="delete-icon" (click)="removeBook(i)"></button>
       </li>
     </ul>
+    <ng-template #emptyCart>
+      <div class="empty-cart-container">
+        <img src="assets/empty-cart.png" alt="Empty cart" class="empty-cart-icon">
+        <h1 class="empty-cart-title">EL CARRITO ESTÁ VACÍO</h1>
+        <h4 class="empty-cart-subtitle">Parece que no tienes items en tu carrito de compras.</h4>
+      </div>
+    </ng-template>
   </div>
 </div>
