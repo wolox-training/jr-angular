@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { Book } from 'app/models/book';
@@ -10,7 +10,7 @@ import * as BookActions from 'app/store/books.actions';
   templateUrl: './shopping-list.component.html',
   styleUrls: ['./shopping-list.component.scss']
 })
-export class ShoppingListComponent {
+export class ShoppingListComponent implements OnInit {
 
   booksStore: Observable<Book[]>;
   @Output() closeModal = new EventEmitter();
@@ -18,6 +18,9 @@ export class ShoppingListComponent {
 
   constructor(private store: Store<AppState>) {
     this.booksStore = store.select('book');
+  }
+
+  ngOnInit(): void {
     this.booksStore.subscribe(books => this.books = books);
   }
 
