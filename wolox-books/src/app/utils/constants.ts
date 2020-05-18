@@ -1,4 +1,5 @@
 export const routerLinks = {
   signUp: '/sign-up',
-  login: '/login'
+  login: '/login',
+  home: '/home'
 };

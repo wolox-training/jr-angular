@@ -7,12 +7,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './screens/Signup/components/register/register.component';
 import { LoginComponent } from './screens/Login/components/login/login.component';
+import { BooksListComponent } from './screens/BooksList/components/books-list/books-list.component';
+import { NavbarComponent } from './screens/BooksList/components/navbar/navbar.component';
+import { BookItemComponent } from './screens/BooksList/components/book-item/book-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    BooksListComponent,
+    NavbarComponent,
+    BookItemComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'app/services/user.service';
+import { Router } from '@angular/router';
 import { RegisterValidator } from 'app/validators/register-validator';
 import * as Constants from 'app/utils/constants';
 
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   validator: RegisterValidator = new RegisterValidator();
   routerLinks = Constants.routerLinks;
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService) { }
+  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -27,12 +28,10 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.userService.loginUser(this.loginForm.value).subscribe(
       res => {
-        const headers = {
-          accessToken: res.headers.get('access-token'),
-          client: res.headers.get('client'),
-          uid: res.headers.get('uid')
-        };
-        console.log(headers);
+        localStorage.setItem('accessToken', res.headers.get('access-token'));
+        localStorage.setItem('client', res.headers.get('client'));
+        localStorage.setItem('uid', res.headers.get('uid'));
+        this.router.navigate([this.routerLinks.home]);
       },
       error => console.error(error.message)
     );

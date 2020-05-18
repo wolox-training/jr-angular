@@ -1,0 +1,4 @@
+<app-navbar></app-navbar>
+<div class="list-container">
+  <app-book-item *ngFor="let book of books" [imageSrc]="book.image" [bookAuthor]="book.author" [bookTitle]="book.title"></app-book-item>
+</div>

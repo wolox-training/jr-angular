@@ -11,7 +11,7 @@
     <span class="error-message" *ngIf="loginForm.get('password').touched">
       {{ validator.errorMessage('password', loginForm) }}
     </span>
-    <button class="sign-up-btn" type="submit" [disabled]="loginForm.invalid">Login</button>
+    <button class="login-btn" type="submit" [disabled]="loginForm.invalid">Login</button>
   </div>
-  <button class="login-btn" type="button" [routerLink]="[routerLinks.signUp]">Sign Up</button>
+  <button class="sign-up-btn" type="button" [routerLink]="[routerLinks.signUp]">Sign Up</button>
 </form>

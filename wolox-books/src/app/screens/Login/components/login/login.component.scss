@@ -1,5 +1,5 @@
-@import 'src/scss/variables/colors';
-@import 'src/scss/generic-styles';
+@import 'scss/variables/colors';
+@import 'scss/generic-styles';
 
 .form-container {
   background-color: $wild-sand;
@@ -41,10 +41,11 @@
   width: 100%;
 }
 
-.sign-up-btn {
+.login-btn {
   @extend %generic-btn;
   background-color: $earls-green;
   color: $white;
+  cursor: pointer;
   margin-top: 24px;
 
   &:disabled {
@@ -52,10 +53,11 @@
   }
 }
 
-.login-btn {
+.sign-up-btn {
   @extend %generic-btn;
   border: 2px solid $earls-green;
   color: $earls-green;
+  cursor: pointer;
 }
 
 .error-message {
