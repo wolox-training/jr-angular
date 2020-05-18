@@ -10,6 +10,8 @@ import { LoginComponent } from './screens/Login/components/login/login.component
 import { BooksListComponent } from './screens/BooksList/components/books-list/books-list.component';
 import { NavbarComponent } from './screens/BooksList/components/navbar/navbar.component';
 import { BookItemComponent } from './screens/BooksList/components/book-item/book-item.component';
+import { AuthGuard } from './guards/auth.guard';
+import { UnauthGuard } from './guards/unauth.guard';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,7 @@ import { BookItemComponent } from './screens/BooksList/components/book-item/book
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthGuard, UnauthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

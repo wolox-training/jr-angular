@@ -1,5 +1,5 @@
 export const routerLinks = {
-  signUp: '/sign-up',
-  login: '/login',
-  home: '/home'
+  signUp: '/unauth/sign-up',
+  login: '/unauth/login',
+  books: '/auth/books'
 };

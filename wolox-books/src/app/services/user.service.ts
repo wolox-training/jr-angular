@@ -21,4 +21,10 @@ export class UserService {
   loginUser(userData) {
     return this.http.post(this.API_URLS.login, userData, { observe: 'response' });
   }
+
+  isLogged() {
+    const headers = ["accessToken", "client", "uid"];
+    const clientHeaders = Object.keys(localStorage).sort();
+    return JSON.stringify(clientHeaders) === JSON.stringify(headers) && Object.values(localStorage).every(val => !!val);
+  }
 }
