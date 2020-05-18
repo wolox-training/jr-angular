@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from 'app/services/book.service';
 import { FilterBooksPipe } from 'app/pipes/filter-books.pipe';
+import { Book } from 'app/models/book';
 import { Router } from '@angular/router';
 import * as Constants from 'app/utils/constants';
 
@@ -11,9 +12,9 @@ import * as Constants from 'app/utils/constants';
 })
 export class BooksListComponent implements OnInit {
 
-  books = [];
+  books: Book[] = [];
   filterText = '';
-  closedModal = true;
+  openedModal = false;
   routerLinks = Constants.routerLinks;
 
   constructor(private bookService: BookService, private router: Router) { }
