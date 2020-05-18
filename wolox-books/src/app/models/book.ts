@@ -3,7 +3,7 @@ export interface Book {
   author: string;
   title: string;
   image_url: string;
-  editorial: string;
+  editor: string;
   year: string;
   genre: string;
   current_rent: string;

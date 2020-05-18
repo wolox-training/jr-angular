@@ -10,15 +10,12 @@ import * as BookActions from 'app/store/books.actions';
   templateUrl: './book-item.component.html',
   styleUrls: ['./book-item.component.scss']
 })
-export class BookItemComponent implements OnInit {
+export class BookItemComponent {
 
   @Input() book: Book;
   readonly defaultImageSrc = 'assets/book-cover.png';
 
   constructor(private store: Store<AppState>) { }
-
-  ngOnInit(): void {
-  }
 
   addBookToCart() {
     event.stopPropagation();

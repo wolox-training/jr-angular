@@ -2,24 +2,24 @@
   <a class="back-link" [routerLink]="['/auth/books']">Atrás</a>
   <div class="book-container">
     <div class="header">
-      <h1 class="title">{{ book.title }}</h1>
-      <span class="placeholder genre">{{ book.genre }}</span>
+      <h1 class="title">{{ (!!book) ? book.title : 'Título del libro' }}</h1>
+      <span class="placeholder genre">{{ (!!book) ? book.genre : '(género)'}}</span>
     </div>
-    <div class="cover-container" [ngClass]="{ 'badge':book.author === bestSellerAuthor }">
-      <img [src]="book.image_url" class="book-cover" alt="Book cover">
+    <div class="cover-container" [ngClass]="{ 'badge': (!!book) && book.author === bestSellerAuthor }">
+      <img [src]="(!!book) ? book.image_url: 'assets/book-cover.png'" class="book-cover" alt="Book cover">
     </div>
     <div class="book-detail">
       <div class="description">
         <h4 class="subtitle">Autor del libro:</h4>
-        <p class="placeholder">{{ book.author }}</p>
+        <p class="placeholder">{{ (!!book) ? book.author : 'Autor del libro' }}</p>
       </div>
       <div class="description">
         <h4 class="subtitle">Editorial:</h4>
-        <p class="placeholder">{{ book.editorial }}</p>
+        <p class="placeholder">{{ (!!book) ? book.editor : 'Nombre de la editorial' }}</p>
       </div>
       <div class="description">
         <h4 class="subtitle">Año de publicación:</h4>
-        <p class="placeholder">{{ book.year }}</p>
+        <p class="placeholder">{{ (!!book) ? book.year : 'Año de publicación' }}</p>
       </div>
     </div>
   </div>
