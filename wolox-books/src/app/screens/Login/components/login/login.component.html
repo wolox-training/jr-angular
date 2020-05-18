@@ -1,17 +1,17 @@
 <form [formGroup]="loginForm" class="form-container" (ngSubmit)="onSubmit()">
   <div class="form-elements">
     <img src="assets/w-logo.png" alt="Wolox logo" class="w-logo">
-    <label class="data-label">Email</label>
+    <label class="data-label" i18n="@@emailLabel">Email</label>
     <input class="data-input" type="email" formControlName="email">
     <span class="error-message" *ngIf="loginForm.get('email').touched">
       {{ validator.errorMessage('email', loginForm) }}
     </span>
-    <label class="data-label">Password</label>
+    <label class="data-label" i18n="@@passwordLabel">Password</label>
     <input class="data-input" type="password" formControlName="password">
     <span class="error-message" *ngIf="loginForm.get('password').touched">
       {{ validator.errorMessage('password', loginForm) }}
     </span>
-    <button class="login-btn" type="submit" [disabled]="loginForm.invalid">Login</button>
+    <button class="login-btn" type="submit" [disabled]="loginForm.invalid" i18n="@@loginBtn">Login</button>
   </div>
-  <button class="sign-up-btn" type="button" [routerLink]="[routerLinks.signUp]">Sign Up</button>
+  <button class="sign-up-btn" type="button" [routerLink]="[routerLinks.signUp]" i18n="@@signUpBtn">Sign Up</button>
 </form>

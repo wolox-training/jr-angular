@@ -1,6 +1,6 @@
 <app-navbar (openBooksModal)="openedModal = true"></app-navbar>
 <div class="list-container">
-  <input [(ngModel)]="filterText" type="text" class="filter-input" placeholder="Busca por el título del libro">
+  <input [(ngModel)]="filterText" type="text" class="filter-input" placeholder="Search by the book title" i18n-placeholder="Search placeholder|Search bar placeholder@@searchPlaceholder">
   <div class="book-container">
     <app-book-item *ngFor="let book of (books | filterBooks:filterText)" [book]="book" [routerLink]="[routerLinks.books, book.id]"></app-book-item>
   </div>

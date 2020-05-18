@@ -1,5 +1,5 @@
 <div class="main-container">
-  <a class="back-link" [routerLink]="['/auth/books']">Atrás</a>
+  <a class="back-link" [routerLink]="['/auth/books']" i18n="Back|Back placeholder link@@backLink">Back</a>
   <div class="book-container">
     <div class="header">
       <h1 class="title">{{ (!!book) ? book.title : 'Título del libro' }}</h1>
@@ -10,7 +10,7 @@
     </div>
     <div class="book-detail">
       <div class="description">
-        <h4 class="subtitle">Autor del libro:</h4>
+        <h4 class="subtitle" i18n="Book author|Book author placeholder@@bookAuthor">Author of the book:</h4>
         <p class="placeholder">{{ (!!book) ? book.author : 'Autor del libro' }}</p>
       </div>
       <div class="description">
@@ -18,7 +18,7 @@
         <p class="placeholder">{{ (!!book) ? book.editor : 'Nombre de la editorial' }}</p>
       </div>
       <div class="description">
-        <h4 class="subtitle">Año de publicación:</h4>
+        <h4 class="subtitle" i18n="Publication year|Publication year placeholder@@publicationYear">Publication year:</h4>
         <p class="placeholder">{{ (!!book) ? book.year : 'Año de publicación' }}</p>
       </div>
     </div>
