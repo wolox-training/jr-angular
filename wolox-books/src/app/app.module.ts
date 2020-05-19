@@ -17,7 +17,7 @@ import { FilterBooksPipe } from './pipes/filter-books.pipe';
 import { BookDetailComponent } from './screens/BookDetail/components/book-detail/book-detail.component';
 import { ShoppingListComponent } from './screens/BooksList/components/shopping-list/shopping-list.component';
 import { StoreModule } from '@ngrx/store';
-import { reducer } from './store/books.reducer';
+import { reducer } from './store/book.reducer';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { reducer } from './store/books.reducer';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    StoreModule.forRoot({ book: reducer })
+    StoreModule.forRoot({ bookStore: reducer })
   ],
   providers: [AuthGuard, UnauthGuard, { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }],
   bootstrap: [AppComponent]

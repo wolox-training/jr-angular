@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { Book } from 'app/models/book';
-import { AppState } from 'app/store/app.state';
 import * as Constants from 'app/utils/constants';
 
 @Component({
@@ -18,8 +17,8 @@ export class NavbarComponent implements OnInit {
   booksStore: Observable<Book[]>;
   routerLinks = Constants.routerLinks;
 
-  constructor(private router: Router, private store: Store<AppState>) {
-    this.booksStore = store.select('book');
+  constructor(private router: Router, private store: Store<Book[]>) {
+    this.booksStore = this.store.select((state: Book[]) => state['bookStore']);
   }
 
   ngOnInit(): void {
