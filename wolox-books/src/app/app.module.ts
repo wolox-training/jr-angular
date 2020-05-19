@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,7 @@ import { NavbarComponent } from './screens/BooksList/components/navbar/navbar.co
 import { BookItemComponent } from './screens/BooksList/components/book-item/book-item.component';
 import { AuthGuard } from './guards/auth.guard';
 import { UnauthGuard } from './guards/unauth.guard';
+import { TokenInterceptor } from './interceptors/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { UnauthGuard } from './guards/unauth.guard';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [AuthGuard, UnauthGuard],
+  providers: [AuthGuard, UnauthGuard, { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

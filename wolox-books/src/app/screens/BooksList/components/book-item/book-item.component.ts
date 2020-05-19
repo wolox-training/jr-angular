@@ -10,6 +10,7 @@ export class BookItemComponent {
   @Input() imageSrc: string;
   @Input() bookTitle: string;
   @Input() bookAuthor: string;
+  readonly defaultImageSrc = 'assets/book-cover.png';
 
   constructor() { }
 }
