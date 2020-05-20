@@ -14,15 +14,14 @@ export class BooksListComponent implements OnInit {
 
   books: Book[] = [];
   filterText = '';
+  openedModal = false;
   routerLinks = Constants.routerLinks;
 
   constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit(): void {
     this.bookService.getBooks().subscribe(
-      res => {
-        this.books = res['page'].map(book => book);
-      },
+      res => this.books = res['page'].map(book => book),
       error => console.error(error.message)
     );
   }
