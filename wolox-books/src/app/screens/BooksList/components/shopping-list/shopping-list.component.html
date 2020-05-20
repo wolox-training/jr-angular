@@ -1,0 +1,21 @@
+<div class="modal-window">
+  <div class="shopping-list">
+    <div class="shopping-header">
+      <h1 class="shopping-title" i18n="Cart title|Shopping cart title@@cartTitle">Your shopping cart</h1>
+      <button type="button" class="close-icon" (click)="closeModal.emit()"></button>
+    </div>
+    <ul class="books-list" *ngIf="books.length > 0; else emptyCart">
+      <li *ngFor="let book of books; let i = index" class="book-item">
+        <span class="book-description">{{ book.title }} - {{ book.author }}</span>
+        <button type="button" class="delete-icon" (click)="removeBook(i)"></button>
+      </li>
+    </ul>
+    <ng-template #emptyCart>
+      <div class="empty-cart-container">
+        <img src="assets/empty-cart.png" alt="Empty cart" class="empty-cart-icon">
+        <h1 class="empty-cart-title" i18n="Empty cart title|Title when shopping cart is empty@@emptyTitle">THE SHOPPING CART IS EMPTY</h1>
+        <h4 class="empty-cart-subtitle" i18n="Empty cart subtitle|Subtitle when shopping cart is empty@@emptySubtitle">It seems that you don't have items in your shopping cart.</h4>
+      </div>
+    </ng-template>
+  </div>
+</div>

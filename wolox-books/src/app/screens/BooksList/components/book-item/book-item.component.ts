@@ -1,4 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { Book } from 'app/models/book';
+import { addBook } from 'app/store/book.actions';
 
 @Component({
   selector: 'app-book-item',
@@ -7,10 +11,13 @@ import { Component, Input } from '@angular/core';
 })
 export class BookItemComponent {
 
-  @Input() imageSrc: string;
-  @Input() bookTitle: string;
-  @Input() bookAuthor: string;
+  @Input() book: Book;
   readonly defaultImageSrc = 'assets/book-cover.png';
 
-  constructor() { }
+  constructor(private store: Store<Book[]>) { }
+
+  addBookToCart() {
+    event.stopPropagation();
+    this.store.dispatch(addBook(this.book));
+  }
 }

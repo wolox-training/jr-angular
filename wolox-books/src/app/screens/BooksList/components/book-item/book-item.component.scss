@@ -34,10 +34,20 @@
   justify-content: center;
   margin: 18px;
   padding: 28px 28px 23px;
+  position: relative;
   width: 198px;
   transition: transform 0.5s;
 
   &:hover {
     transform: scale(1.1);
   }
+}
+
+.add-icon {
+  bottom: 5px;
+  background: center / cover no-repeat url('assets/add-icon.png');
+  height: 32px;
+  position: absolute;
+  right: 5px;
+  width: 31px;
 }

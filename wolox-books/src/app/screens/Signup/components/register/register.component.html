@@ -1,26 +1,26 @@
 <form [formGroup]="registerForm" class="form-container" (ngSubmit)="onSubmit()">
   <div class="form-elements">
     <img src="assets/w-logo.png" alt="Wolox logo" class="w-logo">
-    <label class="data-label">Nombre</label>
+    <label class="data-label" i18n="Name label|Name label in form@@nameLabel">Name</label>
     <input class="data-input" type="text" formControlName="name">
-    <label class="data-label">Apellido</label>
+    <label class="data-label" i18n="Lastname label|Lastname label in form@@lastnameLabel">Lastname</label>
     <input class="data-input" type="text" formControlName="lastName">
-    <label class="data-label">Email</label>
+    <label class="data-label" i18n="Email label|Email label in form@@emailLabel">Email</label>
     <input class="data-input" type="email" formControlName="email">
     <span class="error-message" *ngIf="registerForm.get('email').touched">
       {{ registerValidator.errorMessage('email', registerForm) }}
     </span>
-    <label class="data-label">Password</label>
+    <label class="data-label" i18n="Password label|Password label in form@@passwordLabel">Password</label>
     <input class="data-input" type="password" formControlName="password">
     <span class="error-message" *ngIf="registerForm.get('password').touched">
       {{ registerValidator.errorMessage('password', registerForm) }}
     </span>
-    <label class="data-label">Confirmación de Password</label>
+    <label class="data-label" i18n="Confirmation label|Confirmation label in form@@confirmationLabel">Password Confirmation</label>
     <input class="data-input" type="password" formControlName="confirmPassword">
     <span class="error-message" *ngIf="registerForm.get('confirmPassword').touched">
       {{ registerValidator.errorMessage('confirmPassword', registerForm) }}
     </span>
-    <button class="sign-up-btn" type="submit" [disabled]="registerForm.invalid">Sign Up</button>
+    <button class="sign-up-btn" type="submit" [disabled]="registerForm.invalid" i18n="SignUp btn|SignUp text in btn@@signUpBtn">Sign Up</button>
   </div>
-  <button class="login-btn" type="button" [routerLink]="[routerLinks.login]">Login</button>
+  <button class="login-btn" type="button" [routerLink]="[routerLinks.login]" i18n="Login btn|Login text in btn@@loginBtn">Login</button>
 </form>

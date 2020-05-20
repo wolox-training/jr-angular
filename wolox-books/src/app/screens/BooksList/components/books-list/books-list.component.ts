@@ -10,19 +10,18 @@ import * as Constants from 'app/utils/constants';
   templateUrl: './books-list.component.html',
   styleUrls: ['./books-list.component.scss']
 })
-export class BooksListComponent {
+export class BooksListComponent implements OnInit {
 
   books: Book[] = [];
   filterText = '';
+  openedModal = false;
   routerLinks = Constants.routerLinks;
 
   constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit(): void {
     this.bookService.getBooks().subscribe(
-      res => {
-        this.books = res['page'].map(book => ({ id: book.id, image: book.image_url, author: book.author, title: book.title }));
-      },
+      res => this.books = res['page'].map(book => book),
       error => console.error(error.message)
     );
   }
