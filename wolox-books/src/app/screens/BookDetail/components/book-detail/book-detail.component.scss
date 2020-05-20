@@ -1,0 +1,193 @@
+@import 'src/scss/variables/colors';
+@import 'src/scss/variables/constant-values';
+@import 'src/scss/variables/responsive-values';
+
+.main-container {
+  display: grid;
+  grid-template: 20px 1fr/ 92px 1fr;
+  height: 768px;
+  margin: 20px;
+  padding: 0 270px;
+}
+
+.back-link {
+  color: $black;
+  display: block;
+  font-size: 20px;
+  left: 30px;
+  position: relative;
+  top: 0;
+  width: 91px;
+
+  &::before {
+    background: url(assets/back-arrow.png) center / contain no-repeat;
+    content: '';
+    height: 20px;
+    position: absolute;
+    right: 100px;
+    width: 20px;
+  }
+}
+
+.book-container {
+  bottom: 72px;
+  box-shadow: $shadow-black-05;
+  display: grid;
+  grid-area: 2 / 1;
+  grid-template: 39px 30px 1fr / 261px 1fr;
+  height: 569px;
+  margin-top: 100px;
+  padding: 32px 58px 56px 32px;
+  position: relative;
+  width: 853px;
+}
+
+.book-cover {
+  height: 368px;
+  width: 261px;
+}
+
+.cover-container {
+  display: inline-table;
+  grid-area: 3 / 1 / 4 / 2;
+  margin: 0;
+  top: 44px;
+}
+
+.badge {
+  position: relative;
+
+  &::after {
+    background: url(assets/badge.png) center / contain no-repeat;
+    bottom: 272px;
+    content: '';
+    height: $badge-standard-height;
+    left: 200px;
+    position: absolute;
+    transform: rotate(15deg);
+    width: $badge-standard-width;
+  }
+}
+
+.book-detail {
+  margin: 100px 0 100px 44px;
+}
+
+.header {
+  display: contents;
+  padding: 0;
+}
+
+.title {
+  color: $black;
+  font-size: 32px;
+  font-weight: bold;
+  grid-area: 1 / span 2 / 2;
+  text-align: center;
+}
+
+.placeholder {
+  color: $gray;
+  display: contents;
+  font-size: 24px;
+}
+
+.genre {
+  display: block;
+  font-weight: bold;
+  grid-area: 2 / span 2 / 3;
+  text-align: center;
+}
+
+.description {
+  margin: 36px 0;
+}
+
+.subtitle {
+  color: $black;
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+@media only screen and (max-width: $mobile-width-breakpoint) {
+  .main-container {
+    display: block;
+    margin: 10% 30%;
+    padding: 0;
+    width: 376px;
+  }
+
+  .book-container {
+    display: grid;
+    grid-template: 39px 343px 32px 102px / 100%;
+    margin: 0;
+    padding: 12px 18px;
+    position: static;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 24px;
+    grid-row: 1;
+    grid-area: 1 / 1;
+    line-height: 38px;
+  }
+
+  .genre {
+    border-bottom: 4px solid $earls-green;
+    font-size: 16px;
+    grid-area: 3 / 1;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-right: 5px;
+  }
+
+  .placeholder {
+    font-size: 14px;
+  }
+
+  .cover-container {
+    grid-area: 2/1;
+    margin-top: 20px;
+    text-align: center;
+    top: 0;
+  }
+
+.badge {
+  position: relative;
+
+  &::after {
+    background: url(assets/badge.png) center / contain no-repeat;
+    bottom: 240px;
+    content: '';
+    height: $badge-responsive-height;
+    left: 230px;
+    position: absolute;
+    transform: rotate(15deg);
+    width: $badge-responsive-width;
+  }
+}
+
+  .back-link {
+    font-size: 18px;
+    left: 50%;
+    top: 80%;
+  }
+
+  .book-cover {
+    height: 299px;
+    width: 212px;
+  }
+
+  .book-detail {
+    margin: 0;
+  }
+
+  .description {
+    display: block;
+    margin: 18px 0;
+  }
+}

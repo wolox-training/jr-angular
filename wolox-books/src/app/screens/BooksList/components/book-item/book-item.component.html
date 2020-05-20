@@ -1,5 +1,6 @@
 <div class="book-item">
-  <img [src]="(!!imageSrc) ? imageSrc : defaultImageSrc" alt="Book cover" class="book-cover-mini">
-  <h4 class="book-title">{{ bookTitle }}</h4>
-  <span class="book-author">{{ bookAuthor }}</span>
+  <img [src]="book.image_url || defaultImageSrc" alt="Book cover" class="book-cover-mini">
+  <h4 class="book-title">{{ book.title }}</h4>
+  <span class="book-author">{{ book.author }}</span>
+  <button type="button" class="add-icon" (click)="addBookToCart()"></button>
 </div>
