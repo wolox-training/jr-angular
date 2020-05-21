@@ -1,5 +1,10 @@
 export interface Book {
-  title: string;
+  id: number;
   author: string;
-  image: string;
+  title: string;
+  image_url: string;
+  editor: string;
+  year: string;
+  genre: string;
+  current_rent: string;
 }

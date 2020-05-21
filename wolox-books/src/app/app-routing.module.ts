@@ -5,6 +5,7 @@ import { LoginComponent } from './screens/Login/components/login/login.component
 import { BooksListComponent } from './screens/BooksList/components/books-list/books-list.component';
 import { AuthGuard } from './guards/auth.guard';
 import { UnauthGuard } from './guards/unauth.guard';
+import { BookDetailComponent } from './screens/BookDetail/components/book-detail/book-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/unauth/login', pathMatch: 'full' },
@@ -15,6 +16,10 @@ const routes: Routes = [
       {
         path: 'books',
         component: BooksListComponent
+      },
+      {
+        path: 'books/:id',
+        component: BookDetailComponent
       }
     ]
   },

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'environments/environment';
+import { Book } from 'app/models/book';
 
 @Injectable({
   providedIn: 'root'
@@ -13,5 +14,9 @@ export class BookService {
 
   getBooks() {
     return this.http.get(this.API_URLS.booksList);
+  }
+
+  getBook(id) {
+    return this.http.get<Book>(`${this.API_URLS.booksList}/${id}`);
   }
 }
